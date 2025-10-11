@@ -1,7 +1,7 @@
 ---
 title: 个人博客的快速实现方案
-published: 2024-10-12
-description: "使用Fuwari项目建站，托管到github并快捷部署到vercel"
+published: 2025-10-12
+description: "使用 Fuwari 项目建站，托管到 GitHub 并一键部署到 Vercel"
 image: "./cover-1.jpg"
 tags: ["Fuwari", "Blogging", "Customization"]
 category: Vercel-Project
@@ -20,7 +20,7 @@ draft: false
 npx degit saicaca/fuwari pers-blog
 ```
 
-这会把仓库内容克隆到当前目录下的`pers-blog` 文件夹中。
+这会把仓库内容克隆到当前目录下的 `pers-blog` 文件夹中。
 
 紧接着，由于这个项目强制要求使用 `pnpm` ，所以你首先要在全局安装 `pnpm` 。在 `PowerShell` 中执行:
 
