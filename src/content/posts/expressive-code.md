@@ -23,9 +23,9 @@ console.log('This code is syntax highlighted!')
 
 在 Markdown 中这样写：
 ```markdown
-<!-- -->```js
-<!-- -->console.log('This code is syntax highlighted!')
-<!-- -->```
+<!-- 1 -->```js showLineNumbers=false
+<!-- 2 -->console.log('This code is syntax highlighted!')
+<!-- 3 -->```
 ```
 
 #### 渲染 ANSI 转义序列
