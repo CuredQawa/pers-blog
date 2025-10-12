@@ -15,18 +15,21 @@ draft: false
 
 [语法高亮](https://expressive-code.com/key-features/syntax-highlighting/)
 
-#### 常规语法突出显示
+---
+
+#### - 常规语法突出显示
 
 ```js
 console.log('This code is syntax highlighted!')
 ```
-
 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
-<!-- 1 -->```js
-<!-- 2 -->console.log('This code is syntax highlighted!')
-<!-- 3 -->```
+<!-- 1 -->  ```js
+<!-- 2 -->  console.log('This code is syntax highlighted!')
+<!-- 3 -->  ```
 ```
+
+---
 
 #### 渲染 ANSI 转义序列
 
@@ -47,9 +50,13 @@ Full RGB colors:
 Text formatting: [1mBold[0m [2mDimmed[0m [3mItalic[0m [4mUnderline[0m
 ```
 
+---
+
 ### 编辑器 & 终端
 
 [编辑器 & 终端](https://expressive-code.com/key-features/frames/)
+
+---
 
 #### 编辑器样式
 
@@ -57,12 +64,12 @@ Text formatting: [1mBold[0m [2mDimmed[0m [3mItalic[0m [4mUnderline[0m
 console.log('Title attribute example')
 ```
 
----
-
 ```html
 <!-- src/content/index.html -->
 <div>File name comment example</div>
 ```
+
+---
 
 #### 终端样式
 
@@ -70,19 +77,17 @@ console.log('Title attribute example')
 echo "This terminal frame has no title"
 ```
 
----
-
 ```powershell title="PowerShell terminal example"
 Write-Output "This one has a title!"
 ```
+
+---
 
 #### 覆盖原有框架
 
 ```sh frame="none"
 echo "Look ma, no frame!"
 ```
-
----
 
 ```ps frame="code" title="PowerShell Profile.ps1"
 # Without overriding, this would be a terminal frame
