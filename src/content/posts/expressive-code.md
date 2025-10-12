@@ -15,14 +15,12 @@ draft: false
 
 [语法高亮](https://expressive-code.com/key-features/syntax-highlighting/)
 
----
-
-#### - 常规语法突出显示
+#### 常规语法突出显示
 
 ```js
 console.log('This code is syntax highlighted!')
 ```
-在 Markdown 中这样写：
+- 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```js
 <!-- 2 -->  console.log('This code is syntax highlighted!')
@@ -56,17 +54,30 @@ Text formatting: [1mBold[0m [2mDimmed[0m [3mItalic[0m [4mUnderline[0m
 
 [编辑器 & 终端](https://expressive-code.com/key-features/frames/)
 
----
-
 #### 编辑器样式
 
 ```js title="my-test-file.js"
 console.log('Title attribute example')
 ```
 
+- 在 Markdown 中这样写：
+```markdown showLineNumbers=false
+<!-- 1 -->  ```js title="my-test-file.js"
+<!-- 2 -->  console.log('Title attribute example')
+<!-- 3 -->  ```
+```
+
 ```html
 <!-- src/content/index.html -->
 <div>File name comment example</div>
+```
+
+- 在 Markdown 中这样写：
+```markdown showLineNumbers=false
+<!-- 1 -->  ```html
+<!-- 2 -->  <!-- src/content/index.html -->
+<!-- 3 -->  <div>File name comment example</div>
+<!-- 4 -->  ```
 ```
 
 ---
@@ -77,8 +88,22 @@ console.log('Title attribute example')
 echo "This terminal frame has no title"
 ```
 
+- 在 Markdown 中这样写：
+```markdown showLineNumbers=false
+<!-- 1 -->  ```bash
+<!-- 2 -->  echo "This terminal frame has no title"
+<!-- 3 -->  ```
+```
+
 ```powershell title="PowerShell terminal example"
 Write-Output "This one has a title!"
+```
+
+- 在 Markdown 中这样写：
+```markdown showLineNumbers=false
+<!-- 1 -->  ```powershell title="PowerShell terminal example"
+<!-- 2 -->  Write-Output "This one has a title!"
+<!-- 3 -->  ```
 ```
 
 ---
@@ -89,11 +114,29 @@ Write-Output "This one has a title!"
 echo "Look ma, no frame!"
 ```
 
+- 在 Markdown 中这样写：
+```markdown showLineNumbers=false
+<!-- 1 -->  ```sh frame="none"
+<!-- 2 -->  echo "Look ma, no frame!"
+<!-- 3 -->  ```
+```
+
 ```ps frame="code" title="PowerShell Profile.ps1"
 # Without overriding, this would be a terminal frame
 function Watch-Tail { Get-Content -Tail 20 -Wait $args }
 New-Alias tail Watch-Tail
 ```
+
+- 在 Markdown 中这样写：
+```markdown showLineNumbers=false
+<!-- 1 -->  ```ps frame="code" title="PowerShell Profile.ps1"
+<!-- 2 -->  # Without overriding, this would be a terminal frame
+<!-- 3 -->  function Watch-Tail { Get-Content -Tail 20 -Wait $args }
+<!-- 4 -->  New-Alias tail Watch-Tail
+<!-- 5 -->  ```
+```
+
+---
 
 ### 文本和线条标记
 
