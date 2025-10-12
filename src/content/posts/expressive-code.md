@@ -20,7 +20,7 @@ draft: false
 ```js
 console.log('This code is syntax highlighted!')
 ```
- ---> 在 Markdown 中这样写：
+==> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```js
 <!-- 2 -->  console.log('This code is syntax highlighted!')
