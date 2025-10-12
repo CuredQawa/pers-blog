@@ -67,6 +67,8 @@ console.log('Title attribute example')
 <!-- 3 -->  ```
 ```
 
+而html文件可以直接在代码里注释文件路径，这个注释不会在代码中显示出来，但是会读取并当做编辑器标签
+
 ```html
 <!-- src/content/index.html -->
 <div>File name comment example</div>
@@ -95,6 +97,8 @@ echo "This terminal frame has no title"
 <!-- 3 -->  ```
 ```
 
+带上标题同样是使用 `title="xxx"`
+
 ```powershell title="PowerShell terminal example"
 Write-Output "This one has a title!"
 ```
@@ -120,6 +124,8 @@ echo "Look ma, no frame!"
 <!-- 2 -->  echo "Look ma, no frame!"
 <!-- 3 -->  ```
 ```
+
+自定义以下可以做到：
 
 ```ps frame="code" title="PowerShell Profile.ps1"
 # Without overriding, this would be a terminal frame
