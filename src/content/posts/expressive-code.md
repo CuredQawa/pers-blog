@@ -20,7 +20,7 @@ draft: false
 ```js
 console.log('This code is syntax highlighted!')
 ```
-==> 在 Markdown 中这样写：
+——> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```js
 <!-- 2 -->  console.log('This code is syntax highlighted!')
@@ -62,7 +62,7 @@ Text formatting: [1mBold[0m [2mDimmed[0m [3mItalic[0m [4mUnderline[0m
 console.log('Title attribute example')
 ```
 
---> 在 Markdown 中这样写：
+——> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```js title="my-test-file.js"
 <!-- 2 -->  console.log('Title attribute example')
@@ -76,7 +76,7 @@ console.log('Title attribute example')
 <div>File name comment example</div>
 ```
 
---> 在 Markdown 中这样写：
+——> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```html
 <!-- 2 -->  <!-- src/content/index.html -->
@@ -94,7 +94,7 @@ console.log('Title attribute example')
 echo "This terminal frame has no title"
 ```
 
---> 在 Markdown 中这样写：
+——> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```bash
 <!-- 2 -->  echo "This terminal frame has no title"
@@ -107,7 +107,7 @@ echo "This terminal frame has no title"
 Write-Output "This one has a title!"
 ```
 
---> 在 Markdown 中这样写：
+——> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```powershell title="PowerShell terminal example"
 <!-- 2 -->  Write-Output "This one has a title!"
@@ -124,7 +124,7 @@ Write-Output "This one has a title!"
 echo "Look ma, no frame!"
 ```
 
---> 在 Markdown 中这样写：
+——> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```sh frame="none"
 <!-- 2 -->  echo "Look ma, no frame!"
@@ -139,7 +139,7 @@ function Watch-Tail { Get-Content -Tail 20 -Wait $args }
 New-Alias tail Watch-Tail
 ```
 
---> 在 Markdown 中这样写：
+——> 在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```ps frame="code" title="PowerShell Profile.ps1"
 <!-- 2 -->  # Without overriding, this would be a terminal frame
