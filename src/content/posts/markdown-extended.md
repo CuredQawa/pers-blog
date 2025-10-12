@@ -15,7 +15,7 @@ draft: false
 
 ::github{repo="Fabrizz/MMM-OnSpotify"}
 
-使用代码 `::github{repo="<owner>/<repo>"}`创建 GitHub 仓库卡片。
+使用代码 `::github{repo="<owner>/<repo>"}` 创建 GitHub 仓库卡片。
 
 ```markdown
 ::github{repo="saicaca/fuwari"}
