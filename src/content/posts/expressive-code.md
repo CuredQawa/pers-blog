@@ -20,7 +20,7 @@ draft: false
 ```js
 console.log('This code is syntax highlighted!')
 ```
-- 在 Markdown 中这样写：
+在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```js
 <!-- 2 -->  console.log('This code is syntax highlighted!')
@@ -56,25 +56,27 @@ Text formatting: [1mBold[0m [2mDimmed[0m [3mItalic[0m [4mUnderline[0m
 
 #### 编辑器样式
 
+- 可以通过加上 `title="xxx.xx"` 做到：
+
 ```js title="my-test-file.js"
 console.log('Title attribute example')
 ```
 
-- 在 Markdown 中这样写：
+在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```js title="my-test-file.js"
 <!-- 2 -->  console.log('Title attribute example')
 <!-- 3 -->  ```
 ```
 
-而html文件可以直接在代码里注释文件路径，这个注释不会在代码中显示出来，但是会读取并当做编辑器标签
+- 而html文件可以直接在代码里注释文件路径，这个注释不会在代码中显示出来，但是会读取并当做编辑器标签
 
 ```html
 <!-- src/content/index.html -->
 <div>File name comment example</div>
 ```
 
-- 在 Markdown 中这样写：
+在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```html
 <!-- 2 -->  <!-- src/content/index.html -->
@@ -86,24 +88,26 @@ console.log('Title attribute example')
 
 #### 终端样式
 
+- 在渲染出来的终端中显示代码：
+
 ```bash
 echo "This terminal frame has no title"
 ```
 
-- 在 Markdown 中这样写：
+在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```bash
 <!-- 2 -->  echo "This terminal frame has no title"
 <!-- 3 -->  ```
 ```
 
-带上标题同样是使用 `title="xxx"`
+- 带上标题同样是使用 `title="xxx"`
 
 ```powershell title="PowerShell terminal example"
 Write-Output "This one has a title!"
 ```
 
-- 在 Markdown 中这样写：
+在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```powershell title="PowerShell terminal example"
 <!-- 2 -->  Write-Output "This one has a title!"
@@ -114,18 +118,20 @@ Write-Output "This one has a title!"
 
 #### 覆盖原有框架
 
+- 不使用渲染的终端显示代码，可以用 `frame="none"`：
+
 ```sh frame="none"
 echo "Look ma, no frame!"
 ```
 
-- 在 Markdown 中这样写：
+在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```sh frame="none"
 <!-- 2 -->  echo "Look ma, no frame!"
 <!-- 3 -->  ```
 ```
 
-自定义以下可以做到：
+- 自定义以下可以做到：
 
 ```ps frame="code" title="PowerShell Profile.ps1"
 # Without overriding, this would be a terminal frame
@@ -133,7 +139,7 @@ function Watch-Tail { Get-Content -Tail 20 -Wait $args }
 New-Alias tail Watch-Tail
 ```
 
-- 在 Markdown 中这样写：
+在 Markdown 中这样写：
 ```markdown showLineNumbers=false
 <!-- 1 -->  ```ps frame="code" title="PowerShell Profile.ps1"
 <!-- 2 -->  # Without overriding, this would be a terminal frame
