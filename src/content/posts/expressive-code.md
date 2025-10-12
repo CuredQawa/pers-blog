@@ -22,8 +22,8 @@ console.log('This code is syntax highlighted!')
 ```
 
 在 Markdown 中这样写：
-```markdown
-<!-- 1 -->```js showLineNumbers=false
+```markdown showLineNumbers=false
+<!-- 1 -->```js
 <!-- 2 -->console.log('This code is syntax highlighted!')
 <!-- 3 -->```
 ```
