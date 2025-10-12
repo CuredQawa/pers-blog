@@ -23,9 +23,9 @@ console.log('This code is syntax highlighted!')
 
 在 Markdown 中这样写：
 ```markdown
-\`\`\`js
+\```js
 console.log('This code is syntax highlighted!')
-\`\`\`
+\```
 ```
 
 #### 渲染 ANSI 转义序列
@@ -60,7 +60,7 @@ console.log('Title attribute example')
 ---
 
 ```html
-< !-- src/content/index.html -->
+< !-- src/content/index.html -- >
 <div>File name comment example</div>
 ```
 
