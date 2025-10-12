@@ -1,7 +1,7 @@
 ---
 title: 富有表现力的代码示例
 published: 2024-04-10
-description: How code blocks look in Markdown using Expressive Code.
+description: 使用表达性代码的代码块来优化 Markdown 的外观。
 tags: [Markdown, Blogging, Demo]
 category: Examples
 draft: false
@@ -19,6 +19,13 @@ draft: false
 
 ```js
 console.log('This code is syntax highlighted!')
+```
+
+在 Markdown 中这样写：
+```markdown
+```js
+console.log('This code is syntax highlighted!')
+```
 ```
 
 #### 渲染 ANSI 转义序列
@@ -53,7 +60,7 @@ console.log('Title attribute example')
 ---
 
 ```html
-\<\!\-\- src/content/index.html \-\-\>
+<\!-- src/content/index.html -->
 <div>File name comment example</div>
 ```
 
