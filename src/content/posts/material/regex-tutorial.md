@@ -144,8 +144,8 @@ draft: false
 | 正则 | 匹配示例 |
 |------|--------|
 | `(ab)+` | `"ab"`, `"abab"` |
-| `cat|dog` | `"cat"`, `"dog"` |
-| `(Mr|Mrs|Ms)\. \w+` | `"Mr. Smith"`, `"Ms. Lee"` |
+| `cat\|dog` | `"cat"`, `"dog"` |
+| `(Mr\|Mrs\|Ms)\. \w+` | `"Mr. Smith"`, `"Ms. Lee"` |
 
 :::note
 分组在提取信息时非常有用（如提取日期中的年、月、日）。

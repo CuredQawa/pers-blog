@@ -1,6 +1,6 @@
 ---
 title: 个人博客的快速实现方案
-published: 2025-10-12
+published: 2025-10-11
 description: "使用 Fuwari 项目建站，托管到 GitHub 并一键部署到 Vercel"
 image: "./cover-1.jpg"
 tags: ["Fuwari", "Blogging", "Customization"]
@@ -8,7 +8,7 @@ category: Vercel-Project
 draft: false
 ---
 
-<!-- > Cover image source: [Source](https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/208fc754-890d-4adb-9753-2c963332675d/width=2048/01651-1456859105-(colour_1.5),girl,_Blue,yellow,green,cyan,purple,red,pink,_best,8k,UHD,masterpiece,male%20focus,%201boy,gloves,%20ponytail,%20long%20hair,.jpeg) -->
+
 
 ### 第一步 克隆仓库
 
