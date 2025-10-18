@@ -3,8 +3,8 @@ title: 个人博客的快速实现方案
 published: 2025-10-11
 description: "使用 Fuwari 项目建站，托管到 GitHub 并一键部署到 Vercel"
 image: "./cover-1.jpg"
-tags: ["Fuwari", "Blogging", "Customization"]
-category: Vercel-Project
+tags: ["Fuwari", "教程", "网站搭建"]
+category: Vercel项目
 draft: false
 ---
 

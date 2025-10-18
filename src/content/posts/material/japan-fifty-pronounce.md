@@ -2,8 +2,8 @@
 title: 日语五十音图（查阅版）
 published: 2025-10-12
 description: "发音查阅 开箱即食"
-tags: ["Japanese", "grammar"]
-category: material
+tags: ["日语", "语法"]
+category: 资料
 draft: false
 ---
 

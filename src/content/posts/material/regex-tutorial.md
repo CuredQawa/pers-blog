@@ -2,8 +2,8 @@
 title: 正则表达式基础：如何匹配你想要的字符串
 published: 2025-10-12
 description: "re语法 开箱即食"
-tags: ["Regular Expression", "grammar"]
-category: material
+tags: ["正则表达式", "语法"]
+category: 资料
 draft: false
 ---
 

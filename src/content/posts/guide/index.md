@@ -3,7 +3,7 @@ title: Fuwari 的简单指南
 published: 2024-04-01
 description: "如何使用这个博客模板。"
 image: "./cover.jpeg"
-tags: ["Fuwari", "Blogging", "Customization"]
+tags: ["Fuwari", 教程, 语法]
 category: Guides
 draft: false
 ---
