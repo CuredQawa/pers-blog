@@ -29,7 +29,7 @@ ZeroTier 是一个开源的虚拟局域网（VLAN）工具，可以让你在不�
 
 
 1. 打开浏览器，访问 [ZeroTier 官方下载页面](https://www.zerotier.com/download/)。
-![](./p1.JPG)
+![](./p1.webp)
 
 2. 点击 **Windows** 或 **macOS** 下的下载按钮，下载 `.msi` 安装包。
 
@@ -109,18 +109,18 @@ sudo zerotier-cli info
 
 1. 登录 [ZeroTier Central](https://my.zerotier.com/)（需注册账号）。
 
-![](./p2.JPG)
+![](./p2.webp)
 
 - 登录完成后类似这样
 
-![](./p3.JPG)
+![](./p3.webp)
 
 2. 创建一个新网络，复制网络 ID（如 `a1b2c3d4e5f67890`）。
 3. 在客户端加入网络：
 
 - **Windows/macOS**：在 ZeroTier 界面点击 “Join Network”，粘贴网络 ID。
 
-![](./p4.JPG)
+![](./p4.webp)
 
 - **Linux**：执行命令：
 
@@ -131,7 +131,9 @@ sudo zerotier-cli join a1b2c3d4e5f67890
 
 4. 返回 ZeroTier Central 网页，在成员列表中勾选你刚加入的设备以授权。
 
-![](./p4.jpeg)
+![](./p5-1.webp)
+
+![](./p5-3.webp)
 
 
 ## 六、常见问题
