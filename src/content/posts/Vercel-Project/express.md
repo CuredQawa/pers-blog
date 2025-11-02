@@ -1,6 +1,6 @@
 ---
 title: Express 项目部署到 Vercel
-published: 2025-11-2
+published: 2025-11-02
 description: "将你的简单 Express 项目（暂不支持数据库）托管到 GitHub 并一键部署到 Vercel"
 # image: "./cover-1.jpg"
 tags: ["Express", "教程", "网站搭建"]
@@ -139,4 +139,4 @@ json 不支持注释，尤其是需要读写的，会导致识别错误。记得
 
 不出意外的话 Deploy 完成后，网站就可以预览了。之后你可以绑定域名，更新内容的话只需要修改代码然后 push 到 GitHub 即可。Vercel 检测到代码变动会自动重新部署，这个过程可能要几分钟。
 
-其实我做 Express 部署比这个网站要早。只不过知识点是现在才整理出来发文章。
+其实我做 Express 部署比这个 Fuwari 博客网站要早。只不过知识点是现在才整理出来发文章。
