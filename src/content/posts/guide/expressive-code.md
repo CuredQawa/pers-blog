@@ -2,6 +2,7 @@
 title: 富有表现力的代码示例
 published: 2024-04-10
 description: 使用表达性代码的代码块来优化 Markdown 的外观。
+image: "./cover.jpeg"
 tags: [Markdown, 语法, Fuwari]
 category: Examples
 draft: false
