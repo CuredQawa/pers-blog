@@ -60,7 +60,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/disappear-blank.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "disparaître",
-	bio: "懒癌患者，执行力严重不足<br>接单-网页制作和托管",
+	bio: "懒癌患者，执行力严重不足",
 	links: [
 		{
 			name: "Twitter",
