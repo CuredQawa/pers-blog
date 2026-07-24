@@ -11,6 +11,7 @@ All notable changes to this project are documented in this file.
 - Added a data-driven About card template inspired by the Fuwari About layout.
 - Added support for optional local or remote images in About cards through `src/data/about-cards.ts`.
 - Added movable `::about-cards` Markdown directives, including optional per-section placement.
+- Added a showcase-specific night mode that follows the Fuwari theme switch.
 
 ### Changed
 

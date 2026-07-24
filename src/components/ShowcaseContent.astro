@@ -197,10 +197,10 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 				</div>
 				<div class="grid gap-10 lg:grid-cols-2 lg:grid-rows-3">
 					{interests.map((item) => (
-						<div class="rounded-[45px] border border-[var(--pv-dark)] shadow-[0px_5px_0px_#191a23]">
+						<div class="rounded-[45px] border border-[var(--pv-border)] shadow-[0px_5px_0px_#191a23]">
 							<div class:list={[
 								"pv-service-grid grid h-[300px] w-full grid-cols-2 rounded-[45px] p-8 sm:h-full sm:p-[50px] lg:grid-cols-2 lg:grid-rows-1 lg:gap-[60px]",
-								item.index === 1 ? "bg-[var(--pv-gray)]" : item.index === 2 ? "bg-[var(--pv-green)]" : "bg-[var(--pv-dark)] text-[var(--pv-gray)]",
+								item.index === 1 ? "bg-[var(--pv-surface)]" : item.index === 2 ? "bg-[var(--pv-green)] text-black" : "bg-[var(--pv-dark)] text-[var(--pv-gray)]",
 							]}>
 								<h3 class="col-span-2 flex flex-col lg:col-span-1">
 									<span class:list={["w-fit", item.index === 1 ? "pv-greenhead" : "pv-whitehead"]}>{item.titleTop}</span>
@@ -225,7 +225,7 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 
 	<section class={sectionClass}>
 		<div class="mx-auto w-full max-w-[1280px]">
-			<div class="relative mb-16 mt-16 flex rounded-[45px] bg-[#F3F3F3] p-6 sm:mb-[163px] sm:mt-[123px] sm:p-[60px]">
+			<div class="pv-theme-surface relative mb-16 mt-16 flex rounded-[45px] bg-[var(--pv-surface)] p-6 sm:mb-[163px] sm:mt-[123px] sm:p-[60px]">
 				<div class="flex w-full flex-col gap-[26px] md:w-[40%]">
 					<h2 class="text-3xl font-medium">需要点帮助？</h2>
 					<p>学生党非常缺钱，所以我可以接点小单赚点米。我既可以帮忙制作一个像这个一样棒的个人网页， 也可以帮你托管、上线互联网使之成为一个真正的网站</p>
@@ -270,18 +270,18 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 					<p class="w-auto text-center sm:w-[580px] sm:text-left">一步一步从玩游戏到当创客</p>
 				</div>
 				{journey.map((item) => (
-					<div class="pv-accordion-item mb-[30px] h-[160px] w-full overflow-hidden rounded-[45px] border border-[var(--pv-dark)] bg-[#F3F3F3] shadow-[0px_5px_0px_#191a23] transition-all duration-500">
+					<div class="pv-accordion-item mb-[30px] h-[160px] w-full overflow-hidden rounded-[45px] border border-[var(--pv-border)] bg-[var(--pv-surface)] shadow-[0px_5px_0px_#191a23] transition-all duration-500">
 						<button class="pv-accordion-toggle flex h-[160px] w-full cursor-pointer items-center justify-between gap-3 p-6 sm:p-[60px]" aria-expanded="false">
 							<div class="flex min-w-0 flex-1 items-center gap-3 sm:gap-[25px]">
 								<span class="hidden sm:block sm:text-6xl">0{item.index}</span>
 								{item.title}
 							</div>
-							<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[var(--pv-dark)] bg-[var(--pv-gray)] sm:h-[58px] sm:w-[58px]">
+							<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[var(--pv-border)] bg-[var(--pv-control)] sm:h-[58px] sm:w-[58px]">
 								<div class="pv-accordion-icon relative flex h-10 w-10 items-center justify-center transition-transform duration-300" aria-hidden="true"></div>
 							</div>
 						</button>
 						<div class="px-6 sm:px-[60px]">
-							<div class="h-[2px] w-full bg-black"></div>
+							<div class="h-[2px] w-full bg-[var(--pv-ink)]"></div>
 							<p class="mb-4 mt-1 max-w-full pb-[60px] pt-5">{item.description}</p>
 						</div>
 					</div>
@@ -343,8 +343,8 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 					<h2 class="pv-greenhead text-center text-3xl sm:text-left sm:text-4xl">Contact ME</h2>
 					<p class="w-auto text-center sm:w-[580px] sm:text-left">“来者何人，所为何事？”</p>
 				</div>
-				<div class="relative flex items-center justify-start overflow-hidden rounded-[45px] bg-[#F3F3F3] p-6 sm:p-[60px]">
-					<form class="h-full w-full bg-[var(--pv-gray)] sm:p-6 lg:max-w-lg">
+				<div class="pv-theme-surface relative flex items-center justify-start overflow-hidden rounded-[45px] bg-[var(--pv-surface)] p-6 sm:p-[60px]">
+					<form class="h-full w-full bg-transparent sm:p-6 lg:max-w-lg">
 						<div class="mb-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-[35px]">
 							<div class="flex items-center gap-[14px]">
 								<input type="checkbox" id="showcase-checkbox1" name="checkbox1" class="pv-form-checkbox" checked />
@@ -357,15 +357,15 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 						</div>
 						<div class="mb-4">
 							<label for="showcase-name" class="mb-2 block">Name*</label>
-							<input type="text" id="showcase-name" name="name" placeholder="Name" class="w-full rounded-[14px] border border-black px-4 py-[18px] text-black outline-none sm:px-[30px]" />
+							<input type="text" id="showcase-name" name="name" placeholder="Name" class="pv-theme-input w-full rounded-[14px] border border-[var(--pv-input-border)] bg-[var(--pv-input)] px-4 py-[18px] text-[var(--pv-ink)] outline-none sm:px-[30px]" />
 						</div>
 						<div class="mb-4">
 							<label for="showcase-email" class="mb-2 block">Email*</label>
-							<input type="email" id="showcase-email" name="email" placeholder="Email" class="w-full rounded-[14px] border border-black px-4 py-[18px] text-black outline-none sm:px-[30px]" />
+							<input type="email" id="showcase-email" name="email" placeholder="Email" class="pv-theme-input w-full rounded-[14px] border border-[var(--pv-input-border)] bg-[var(--pv-input)] px-4 py-[18px] text-[var(--pv-ink)] outline-none sm:px-[30px]" />
 						</div>
 						<div class="mb-4">
 							<label for="showcase-message" class="mb-2 block">Message*</label>
-							<textarea id="showcase-message" name="message" placeholder="Message" class="w-full rounded-[14px] border border-black px-4 py-[18px] text-black outline-none sm:px-[30px]"></textarea>
+							<textarea id="showcase-message" name="message" placeholder="Message" class="pv-theme-input w-full rounded-[14px] border border-[var(--pv-input-border)] bg-[var(--pv-input)] px-4 py-[18px] text-[var(--pv-ink)] outline-none sm:px-[30px]"></textarea>
 						</div>
 						<button type="submit" class="pv-btn-primary w-full">Send</button>
 					</form>
@@ -399,13 +399,39 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 		--pv-green: #cf90f8;
 		--pv-dark: #1f1f24;
 		--pv-gray: #f3f3f3;
-		background: #fff;
-		color: #000;
+		--pv-page: #fff;
+		--pv-surface: #f3f3f3;
+		--pv-control: #f3f3f3;
+		--pv-ink: #000;
+		--pv-border: #1f1f24;
+		--pv-input: #fff;
+		--pv-input-border: #000;
+		background: var(--pv-page);
+		color: var(--pv-ink);
 		font-family: "Grotesk", sans-serif;
 		font-size: 20px;
 		border-radius: max(0px, calc(var(--radius-large) - 0.25rem));
 		overflow: hidden;
 		padding-top: 2rem;
+		transition: background-color 300ms, color 300ms;
+	}
+
+	:global(.dark) .showcase-positivus {
+		--pv-green: #d7a4f8;
+		--pv-dark: #121015;
+		--pv-page: #1b1820;
+		--pv-surface: #29252f;
+		--pv-control: #39333f;
+		--pv-ink: #f5f1f7;
+		--pv-border: #73677d;
+		--pv-input: #211e26;
+		--pv-input-border: #7f728a;
+	}
+
+	.pv-theme-surface,
+	.pv-theme-input,
+	.pv-service-grid {
+		transition: background-color 300ms, color 300ms, border-color 300ms;
 	}
 
 	.pv-greenhead,
@@ -444,7 +470,7 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 	.pv-accordion-icon::before,
 	.pv-accordion-icon::after {
 		position: absolute;
-		background: #000;
+		background: var(--pv-ink);
 		content: "";
 		transition: opacity 300ms ease;
 	}
@@ -465,6 +491,7 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 
 	.pv-accordion-item.active {
 		background: var(--pv-green);
+		color: #000;
 	}
 
 	.pv-accordion-item.active .pv-accordion-icon {
@@ -473,6 +500,11 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 
 	.pv-accordion-item.active .pv-accordion-icon::after {
 		opacity: 0;
+	}
+
+	.pv-accordion-item.active .pv-accordion-icon::before,
+	.pv-accordion-item.active .pv-accordion-icon::after {
+		background: #000;
 	}
 
 	.pv-slider-track {
@@ -524,7 +556,7 @@ const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
 		width: 28px;
 		cursor: pointer;
 		appearance: none;
-		border: 1px solid #000;
+		border: 1px solid var(--pv-ink);
 		border-radius: 50%;
 	}
 
