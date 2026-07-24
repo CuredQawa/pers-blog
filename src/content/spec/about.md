@@ -19,6 +19,10 @@
 
 过上我想过的生活。随心所欲，快快乐乐。
 
+<!-- 卡片数据或图片变化时会自动重新编译。使用 ::about-cards 显示全部卡片；使用 section 属性可以分别移动某个分组。 -->
+::about-cards{section="喜欢的番剧"}
+
+::about-cards{section="喜欢的游戏"}
 
 <!-- > ### Sources of images used in this site
 > - [Unsplash](https://unsplash.com/)

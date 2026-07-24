@@ -1,0 +1,117 @@
+.about-card-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin: 2.5rem 0;
+}
+
+.about-card-section-title {
+    position: relative;
+    width: fit-content;
+    margin-bottom: 1.5rem;
+    color: rgb(0 0 0 / 90%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.dark .about-card-section-title {
+    color: rgb(255 255 255 / 90%);
+}
+
+.about-card-section-accent {
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 1.5rem;
+    height: 0.25rem;
+    border-radius: 9999px;
+    background: var(--primary);
+}
+
+.about-card-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+}
+
+.about-info-card {
+    min-height: 12rem;
+    overflow: hidden;
+    border-radius: var(--radius-large);
+    background: var(--btn-regular-bg);
+    transition: transform 300ms, background-color 300ms, box-shadow 300ms;
+}
+
+.about-info-card:hover {
+    background: var(--btn-regular-bg-hover);
+    box-shadow: 0 12px 30px rgb(0 0 0 / 10%);
+    transform: translateY(-0.25rem);
+}
+
+.about-info-card-image-wrap {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.about-info-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms;
+}
+
+.about-info-card:hover .about-info-card-image {
+    transform: scale(1.05);
+}
+
+.about-info-card-content {
+    padding: 1.5rem;
+}
+
+.about-info-card-title {
+    color: rgb(0 0 0 / 90%);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+    transition: color 300ms;
+}
+
+.dark .about-info-card-title {
+    color: rgb(255 255 255 / 90%);
+}
+
+.about-info-card:hover .about-info-card-title {
+    color: var(--primary);
+}
+
+.about-info-card-description {
+    margin: 0.75rem 0 0 !important;
+    color: rgb(0 0 0 / 75%);
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+
+.dark .about-info-card-description {
+    color: rgb(255 255 255 / 75%);
+}
+
+.about-cards-error {
+    margin: 1rem 0;
+    border-radius: 0.75rem;
+    background: rgb(239 68 68 / 12%);
+    padding: 1rem;
+    color: rgb(185 28 28);
+}
+
+@media (min-width: 640px) {
+    .about-info-card-content {
+        padding: 1.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

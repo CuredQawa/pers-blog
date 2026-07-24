@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
@@ -17,12 +19,46 @@ import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
 import { expressiveCodeConfig } from "./src/config.ts";
 import { pluginLanguageBadge } from "./src/plugins/expressive-code/language-badge.ts";
+import { AboutCardsComponent } from "./src/plugins/rehype-component-about-cards.mjs";
 import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
+
+const isProduction = process.env.NODE_ENV === "production";
+
+function watchAboutCards() {
+	const dataFile = path.resolve("src/data/about-cards.ts");
+	const imageDirectory = `${path.resolve("public/images")}${path.sep}`;
+	const aboutFile = path.resolve("src/content/spec/about.md");
+
+	return {
+		name: "watch-about-cards",
+		configureServer(server) {
+			let restarting = false;
+			const restartOnChange = async (_event, file) => {
+				const changedFile = path.resolve(file);
+				if (
+					restarting ||
+					(changedFile !== dataFile && !changedFile.startsWith(imageDirectory))
+				) {
+					return;
+				}
+
+				restarting = true;
+				console.info(`[about-cards] Reloading after ${path.basename(changedFile)} changed.`);
+				const now = new Date();
+				fs.utimesSync(aboutFile, now, now);
+				await server.restart();
+			};
+
+			server.watcher.on("all", restartOnChange);
+			return () => server.watcher.off("all", restartOnChange);
+		},
+	};
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -40,7 +76,7 @@ export default defineConfig({
 			// when the Tailwind class `transition-all` is used
 			containers: ["main", "#toc"],
 			smoothScrolling: true,
-			cache: true,
+			cache: isProduction,
 			preload: true,
 			accessibility: true,
 			updateHead: true,
@@ -119,6 +155,7 @@ export default defineConfig({
 				rehypeComponents,
 				{
 					components: {
+						"about-cards": AboutCardsComponent,
 						github: GithubCardComponent,
 						note: (x, y) => AdmonitionComponent(x, y, "note"),
 						tip: (x, y) => AdmonitionComponent(x, y, "tip"),
@@ -154,6 +191,7 @@ export default defineConfig({
 		],
 	},
 	vite: {
+		plugins: [watchAboutCards()],
 		build: {
 			rollupOptions: {
 				onwarn(warning, warn) {

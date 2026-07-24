@@ -43,6 +43,77 @@ html.is-animating .transition-swup-fade {
     animation-delay: 400ms;
 }
 
+/* Collapse the persistent blog sidebar while visiting the showcase. */
+#main-grid {
+    transition:
+        transform 700ms,
+        grid-template-columns 500ms ease,
+        column-gap 500ms ease,
+        row-gap 500ms ease;
+}
+
+#sidebar-shell {
+    display: grid;
+    min-width: 0;
+    grid-template-rows: 1fr;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition:
+        grid-template-rows 500ms ease,
+        opacity 250ms ease,
+        transform 500ms ease,
+        visibility 0s;
+}
+
+#sidebar-collapse {
+    min-width: 0;
+    min-height: 0;
+    overflow: clip;
+}
+
+body.is-showcase #sidebar-shell {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-1.25rem);
+    transition:
+        grid-template-rows 500ms ease,
+        opacity 250ms ease,
+        transform 500ms ease,
+        visibility 0s linear 500ms;
+}
+
+@media (min-width: 1024px) {
+    #main-grid {
+        grid-template-columns: 17.5rem minmax(0, 1fr);
+    }
+
+    body.is-showcase #main-grid {
+        grid-template-columns: 0 minmax(0, 1fr);
+        column-gap: 0;
+    }
+}
+
+@media (max-width: 1023.98px) {
+    body.is-showcase #main-grid {
+        row-gap: 0;
+    }
+
+    .navbar-hidden {
+        pointer-events: none;
+        transform: translateY(-100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #main-grid,
+    #sidebar-shell {
+        transition-duration: 0.01ms !important;
+    }
+}
+
 /* Post content */
 #post-container :nth-child(1) { animation-delay: calc(var(--content-delay) + 0ms) }
 #post-container :nth-child(2) { animation-delay: calc(var(--content-delay) + 50ms) }
@@ -50,4 +121,3 @@ html.is-animating .transition-swup-fade {
 #post-container :nth-child(4) { animation-delay: calc(var(--content-delay) + 175ms) }
 #post-container :nth-child(5) { animation-delay: calc(var(--content-delay) + 250ms) }
 #post-container :nth-child(6) { animation-delay: calc(var(--content-delay) + 325ms) }
-

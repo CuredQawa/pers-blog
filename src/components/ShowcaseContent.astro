@@ -1,0 +1,650 @@
+---
+import { Image } from "astro:assets";
+import cardPic1 from "../assets/showcase/card-pic1.png";
+import cardPic2 from "../assets/showcase/card-pic2.png";
+import cardPic3 from "../assets/showcase/card-pic3.png";
+import cardPic4 from "../assets/showcase/card-pic4.png";
+import cardPic5 from "../assets/showcase/card-pic5.png";
+import cardPic6 from "../assets/showcase/card-pic6.png";
+import contactPic from "../assets/showcase/contact-pic.png";
+import greenArrow from "../assets/showcase/icon3.svg";
+import darkCircleArrow from "../assets/showcase/icon6.svg";
+import lightCircleArrow from "../assets/showcase/icon7.svg";
+import heroImage from "../assets/showcase/me-smaller.png";
+import proposalPic from "../assets/showcase/proposal-pic.png";
+import { url } from "../utils/url-utils";
+
+const interests = [
+	{
+		index: 1,
+		titleTop: "喜欢的游戏",
+		titleBottom: "第九艺术爱好者",
+		image: cardPic1,
+		alt: "Games",
+		link: "#games",
+	},
+	{
+		index: 2,
+		titleTop: "喜欢的番剧",
+		titleBottom: "二次元浓度较高",
+		image: cardPic2,
+		alt: "Animation",
+		link: "#animation",
+	},
+	{
+		index: 3,
+		titleTop: "喜欢的文学作品",
+		titleBottom: "网文和名著",
+		image: cardPic3,
+		alt: "Literature",
+		link: "#literature",
+	},
+	{
+		index: 1,
+		titleTop: "喜欢的音乐",
+		titleBottom: "My Music Box",
+		image: cardPic4,
+		alt: "Music",
+		link: "#music",
+	},
+	{
+		index: 2,
+		titleTop: "Web 设计和学习",
+		titleBottom: "有点用但是不多",
+		image: cardPic5,
+		alt: "Web-design",
+		link: "#web-design",
+	},
+	{
+		index: 3,
+		titleTop: "猫咪",
+		titleBottom: "这一页用来展示我的猫咪",
+		image: cardPic6,
+		alt: "Cat",
+		link: "#cat",
+	},
+];
+
+const cases = [
+	{
+		title:
+			"加入创客社后，和同学一起搭建了一个 Express后端 + PostgreSQL数据库 的社团网站。",
+		link: "https://google.com",
+	},
+	{
+		title:
+			"个人展示网站和博客网站，使用 Astro 已有的 Positivus 和 Fuwari 框架搭建，托管在 Vercel .",
+		link: "https://google.com",
+	},
+	{
+		title:
+			"快来玩绝区零快来玩绝区零快来玩绝区零快来玩绝区零快来玩绝区零快来玩绝区零快来玩绝区零。",
+		link: "https://google.com",
+	},
+];
+
+const journey = [
+	{
+		index: 1,
+		title: "从游戏开始的旅程",
+		description:
+			"2023年3月，在朋友的推荐下接触了 JAVA 版的 Minecraft 生电玩法，并迅速沉迷其中，成为一名生电兼红石钻研玩家。8月份，因为要构建 MCDR 服务器，使用了阿里云的服务器并接触到了 Linux 。于是我从游戏开始慢慢地接触到代码和开发。",
+	},
+	{
+		index: 2,
+		title: "开始了解更多",
+		description:
+			"在这之前的7月份，我就通过了红石考核，成为了 LAS 生电服务器的一员。虽然在这个服务器上线的时间不长，但是给我的影响很深。服务器里有很多红石大佬，同时这些人很多也是技术大佬，编写模组、制作网站（LAS有自己的网站）、创新生电机器等等。我努力地向他们靠拢，开始玩珍珠炮，并在之后接触了Web开发（制作网站）",
+	},
+	{
+		index: 3,
+		title: "另一个全新的领域",
+		description:
+			"2023年11月，我开始接触装机相关的知识。我学习了电脑主机的各个部分以及很多的装机技巧，更换了我的PC的CPU。2024年7月，为我的PC加装了一块256G的固态SATA硬盘。9月末，为了更换机箱，将所有东西都拆了出来进行迁移，同时自己加装了独立显卡。2025年2月末更是轻车熟路地换了一块西部数据的3T机械硬盘。键盘也从爱国者变成了手感更好的狼蛛3061，最后是狼蛛F87。",
+	},
+	{
+		index: 4,
+		title: "Web开发之路",
+		description:
+			"2024年后，我开始有意识地学习编程。机缘之下我得知了 Free Code Camp(FCC) 项目，并完成了网页制作的入门学习，之后就是进阶的 Express 项目搭建网站。2025年10月后才开始用 Astro 减负，快速上手模版网站制作。",
+	},
+	{
+		index: 5,
+		title: "3D建模，但是学艺不精",
+		description:
+			"2024年九月中旬，我加入了所在高中部的创客社。在社团，我接触到了 Blender 3D建模和3D打印，以及激光切割机切木板的技术（社团里发现了野生的学校经费）。当然，更重要的是接触到了其他能力出众的同龄人，结识这些大佬使我学习到了很多。",
+	},
+	{
+		index: 6,
+		title: "展望未来",
+		description:
+			"2025年开始，学习压力激增，逐渐地对于新知的渴求少了。不过，两年多的创客之旅让我的认知高了不少，梦想和实现思路也充实了不少。今后，我也会砥砺前行，展望未来，走出一条属于我的成功之路的。",
+	},
+];
+
+const testimonials = [
+	{
+		name: "卡尔·爱德华·萨根",
+		role: "天文学家、天体物理学家",
+		comment:
+			"再看看那个光点吧。那是这里，那是家园，那是我们。你所爱的每一个人，你认识的每一个人，你听说过的每一个人，曾经存在过的每一个人，都在它上面度过他们的一生。所有的欢乐与痛苦，所有的宗教与教条，所有的猎人与强盗，所有的英雄与懦夫，所有文明的创造者与毁灭者，所有的国王与农夫，所有热恋中的情侣，所有的父母、孩子、发明家与探险者，所有的道德导师，所有的腐败政客，所有的‘超级明星’，所有的‘最高领袖’，所有圣徒与罪人，都住在这粒悬浮在阳光中的微尘上。",
+	},
+	{
+		name: "伯特兰·阿瑟·威廉·罗素",
+		role: "哲学家",
+		comment:
+			"对爱情的渴望，对知识的追求，对人类苦难不可遏制的同情，这三种纯洁而无比强烈的激情支配了我的一生。它们像狂风一般，将我任意吹拂，越过深沉痛苦的海洋，濒临绝望的边缘。我寻求爱，首先因为它带来狂喜——这狂喜足以让人愿意用整个生命去换取短短几小时的欢愉；其次，因为它能解除孤独——那种令人战栗的孤独感，是一个人透过世界的边缘，凝视冰冷、无底、死寂的深渊；最后，因为我在爱的结合中看到了，在小小的缩影里，圣贤与诗人所梦想的天堂景象。",
+	},
+	{
+		name: "草薙素子",
+		role: "《攻壳机动队》角色",
+		comment:
+			"如果我的身体全是义体，记忆可以被篡改，意识能上传云端，那‘我’究竟是谁？是这具躯壳？是存储的数据？还是某种无法被复制的‘ghost’（灵魂）？或许答案不在定义中，而在追问本身。正因我们不断质疑‘我是谁’，才证明我们尚未被技术异化。保持怀疑，就是保持人性。",
+	},
+	{
+		name: "芙莉莲",
+		role: "魔法使，长寿的精灵族",
+		comment:
+			"人类的生命太短了，短到我刚学会珍惜，他们就已白发苍苍。可正因为短暂，他们的每一刻才如此炽热：一句‘明天见’，一顿家常饭，一次夕阳下的沉默——对他们而言都是珍贵的永恒。我活了一千年，却直到失去他们才明白：不是时间长短决定意义，而是是否真正‘看见’了彼此。现在，我愿用余生，好好记住每一个曾照亮我的人。",
+	},
+	{
+		name: "叶瞬光",
+		role: "虚狩·青溟司命",
+		comment:
+			"小师妹，其实我还有些话 · · ·想要告诉你。她 · · · 不，是另一个“我”曾经认为，爱是诅咒，是陷阱，是某种潮湿而阴冷的东西 · · · 爱会毁了我。或许是因为过去的我总是心怀愧疚和恐惧吧，所以才会产生这样的想法。当你的内心是一片沼泽时，再温暖的阳光照进来，也会变得冰冷扭曲。但其实 · · · 不是这样的。爱是奇迹，是力量，是当我在无尽的深渊中下坠时，将我重新拉回人间的那只温暖的手。（停顿）我真的，真的很爱这个世界。",
+	},
+];
+
+const sectionClass = "px-5 flex justify-center overflow-hidden lg:block";
+---
+
+<div class="showcase-positivus" style="padding-top:0">
+	<section id="home" class={sectionClass}>
+		<div class="mx-auto w-full max-w-[1280px]">
+			<div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
+				<div class="items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
+					<div class="space-y-3 text-left">
+						<h1 class="text-center text-4xl font-medium leading-none md:text-left md:text-6xl">
+							To be Free <br />
+							And <br />
+							Unafraid
+						</h1>
+						<p class="mb-8 mt-6 text-center text-lg font-normal leading-7 sm:mb-12 md:pr-12 md:text-left">
+							欢迎来到我的个人展示网页 :) <br />
+							网页使用 Astro 模版，内容完全由我自己填充 <br />
+							首页形象设计：哇塞帝企鹅
+						</p>
+						<div class="inline-flex w-full items-center justify-center md:justify-start">
+							<a href={url("/")} class="rounded-2xl border bg-zinc-900 px-8 py-5 text-center text-xl font-normal leading-7 text-white hover:bg-white hover:text-black">
+								浏览我的博客
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
+					<Image src={heroImage} alt="Hero Ilustration" loading="eager" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="services" class={sectionClass}>
+		<div class="mx-auto w-full max-w-[1280px]">
+			<div class="mb-5 mt-16 sm:mt-[140px]">
+				<div class="mb-10 flex flex-col items-center gap-4 sm:mb-20 sm:flex-row sm:gap-10">
+					<h2 class="pv-greenhead text-center text-3xl sm:text-left sm:text-4xl">喜好</h2>
+					<p class="w-auto text-center sm:w-[580px] sm:text-left">在这里你可以看到我的个性展示</p>
+				</div>
+				<div class="grid gap-10 lg:grid-cols-2 lg:grid-rows-3">
+					{interests.map((item) => (
+						<div class="rounded-[45px] border border-[var(--pv-dark)] shadow-[0px_5px_0px_#191a23]">
+							<div class:list={[
+								"pv-service-grid grid h-[300px] w-full grid-cols-2 rounded-[45px] p-8 sm:h-full sm:p-[50px] lg:grid-cols-2 lg:grid-rows-1 lg:gap-[60px]",
+								item.index === 1 ? "bg-[var(--pv-gray)]" : item.index === 2 ? "bg-[var(--pv-green)]" : "bg-[var(--pv-dark)] text-[var(--pv-gray)]",
+							]}>
+								<h3 class="col-span-2 flex flex-col lg:col-span-1">
+									<span class:list={["w-fit", item.index === 1 ? "pv-greenhead" : "pv-whitehead"]}>{item.titleTop}</span>
+									<span class:list={["w-fit", item.index === 1 ? "pv-greenhead" : "pv-whitehead"]}>{item.titleBottom}</span>
+								</h3>
+								<picture class="order-1 row-span-1 flex h-full w-full items-center justify-center lg:order-none lg:row-span-2">
+									<Image src={item.image} alt={item.alt} class="h-[100px] w-auto object-cover sm:h-auto sm:w-3/4" />
+								</picture>
+								<div class="flex items-end">
+									<a href={item.link} class="flex items-center gap-3.5">
+										<Image src={item.index === 3 ? lightCircleArrow : darkCircleArrow} alt={item.alt} />
+										<span class="hidden sm:block">Service Info</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class={sectionClass}>
+		<div class="mx-auto w-full max-w-[1280px]">
+			<div class="relative mb-16 mt-16 flex rounded-[45px] bg-[#F3F3F3] p-6 sm:mb-[163px] sm:mt-[123px] sm:p-[60px]">
+				<div class="flex w-full flex-col gap-[26px] md:w-[40%]">
+					<h2 class="text-3xl font-medium">需要点帮助？</h2>
+					<p>学生党非常缺钱，所以我可以接点小单赚点米。我既可以帮忙制作一个像这个一样棒的个人网页， 也可以帮你托管、上线互联网使之成为一个真正的网站</p>
+					<a href="https://www.disappear.website/pricing" class="pv-btn-primary text-center">前往服务</a>
+				</div>
+				<picture class="absolute right-[-10%] top-[-15%] hidden h-[450px] items-center justify-center md:flex lg:right-0">
+					<Image src={proposalPic} alt="This is an illustration" class="hidden md:flex lg:h-full lg:w-auto" />
+				</picture>
+			</div>
+		</div>
+	</section>
+
+	<section id="cases" class={sectionClass}>
+		<div class="mx-auto w-full max-w-[1280px]">
+			<div class="mb-10 flex flex-col items-center gap-4 sm:mb-20 sm:flex-row sm:gap-10">
+				<h2 class="pv-greenhead text-center text-3xl sm:text-left sm:text-4xl">实践能力</h2>
+				<p class="w-auto text-center sm:w-[580px] sm:text-left">哈基米哦南北绿豆 阿西嘎纳哈呀库</p>
+			</div>
+			<div class="flex flex-col justify-between gap-4 rounded-[45px] p-1 lg:flex-row lg:gap-0">
+				{cases.map((item) => (
+					<div class="rounded-[45px]">
+						<div class="m-[1px] flex h-full rounded-[45px] bg-[var(--pv-dark)] p-6 text-[var(--pv-gray)] sm:p-[60px]">
+							<div class="flex flex-col gap-5">
+								<p>{item.title}</p>
+								<a href={item.link} class="flex items-center gap-[15px]">
+									<span class="text-[var(--pv-green)]">Case Info</span>
+									<Image src={greenArrow} alt="Arrow pointing up right" />
+								</a>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id="process" class={sectionClass}>
+		<div class="mx-auto w-full max-w-[1280px]">
+			<div class="mt-16 sm:mt-[140px]">
+				<div class="mb-10 flex flex-col items-center gap-4 sm:mb-20 sm:flex-row sm:gap-10">
+					<h2 class="pv-greenhead text-center text-3xl sm:text-left sm:text-4xl">我的创客历程</h2>
+					<p class="w-auto text-center sm:w-[580px] sm:text-left">一步一步从玩游戏到当创客</p>
+				</div>
+				{journey.map((item) => (
+					<div class="pv-accordion-item mb-[30px] h-[160px] w-full overflow-hidden rounded-[45px] border border-[var(--pv-dark)] bg-[#F3F3F3] shadow-[0px_5px_0px_#191a23] transition-all duration-500">
+						<button class="pv-accordion-toggle flex h-[160px] w-full cursor-pointer items-center justify-between gap-3 p-6 sm:p-[60px]" aria-expanded="false">
+							<div class="flex min-w-0 flex-1 items-center gap-3 sm:gap-[25px]">
+								<span class="hidden sm:block sm:text-6xl">0{item.index}</span>
+								{item.title}
+							</div>
+							<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[var(--pv-dark)] bg-[var(--pv-gray)] sm:h-[58px] sm:w-[58px]">
+								<div class="pv-accordion-icon relative flex h-10 w-10 items-center justify-center transition-transform duration-300" aria-hidden="true"></div>
+							</div>
+						</button>
+						<div class="px-6 sm:px-[60px]">
+							<div class="h-[2px] w-full bg-black"></div>
+							<p class="mb-4 mt-1 max-w-full pb-[60px] pt-5">{item.description}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id="testimonials" class={sectionClass}>
+		<div class="mx-auto w-full max-w-[1280px]">
+			<div class="mt-20">
+				<div class="mb-10 flex flex-col items-center gap-4 sm:mb-20 sm:flex-row sm:gap-10">
+					<h2 class="pv-greenhead text-center text-3xl sm:text-left sm:text-4xl">喜欢的格言</h2>
+					<p class="w-auto text-center sm:w-[580px] sm:text-left">大人物们总是会说一些很有哲理的话</p>
+				</div>
+				<div class="mb-16 rounded-[45px] bg-[var(--pv-dark)] text-[var(--pv-gray)] sm:mb-[150px]">
+					<div class="mt-10" id="ProjectSlider">
+						<div class="pv-slider-track mb-16 flex gap-5 overflow-x-auto pt-10 sm:mb-[124px] sm:gap-[50px] sm:pt-[84px]" data-slider-track>
+							{testimonials.map((item, index) => (
+								<div class="pv-slide flex shrink-0 snap-center flex-col" role="group" aria-label={`${index + 1} / ${testimonials.length}`}>
+									<div class="flex items-center justify-center px-6 py-[48px] sm:px-[52px]">
+										<p class="pv-bubble">"{item.comment}"</p>
+									</div>
+									<div class="w-full px-10 sm:px-20">
+										<div class="font-medium text-[var(--pv-green)]">{item.name}</div>
+										<div>{item.role}</div>
+									</div>
+								</div>
+							))}
+						</div>
+						<div class="mb-[68px] flex justify-around lg:justify-center lg:gap-[189px]">
+							<button type="button" data-slider-direction="-1" aria-label="Previous quote" class="h-7 w-7 sm:h-10 sm:w-10">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>
+							</button>
+							<div class="flex items-center gap-3 sm:gap-5">
+								{testimonials.map((_, index) => (
+									<button
+										type="button"
+										data-slider-index={index}
+										aria-label={`Go to quote ${index + 1}`}
+										class:list={["h-[19px] w-[19px] rounded-full", index === 0 ? "bg-[var(--pv-green)]" : "bg-white"]}
+									></button>
+								))}
+							</div>
+							<button type="button" data-slider-direction="1" aria-label="Next quote" class="h-7 w-7 rotate-180 sm:h-10 sm:w-10">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contact" class={sectionClass}>
+		<div class="mx-auto w-full max-w-[1280px]">
+			<div class="relative mb-16 sm:mb-[140px]">
+				<div class="mb-10 flex flex-col items-center gap-4 sm:mb-20 sm:flex-row sm:gap-10">
+					<h2 class="pv-greenhead text-center text-3xl sm:text-left sm:text-4xl">Contact ME</h2>
+					<p class="w-auto text-center sm:w-[580px] sm:text-left">“来者何人，所为何事？”</p>
+				</div>
+				<div class="relative flex items-center justify-start overflow-hidden rounded-[45px] bg-[#F3F3F3] p-6 sm:p-[60px]">
+					<form class="h-full w-full bg-[var(--pv-gray)] sm:p-6 lg:max-w-lg">
+						<div class="mb-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-[35px]">
+							<div class="flex items-center gap-[14px]">
+								<input type="checkbox" id="showcase-checkbox1" name="checkbox1" class="pv-form-checkbox" checked />
+								<label for="showcase-checkbox1">Say Hi</label>
+							</div>
+							<div class="flex items-center gap-[14px]">
+								<input type="checkbox" id="showcase-checkbox2" name="checkbox2" class="pv-form-checkbox" />
+								<label for="showcase-checkbox2">Get a Quote</label>
+							</div>
+						</div>
+						<div class="mb-4">
+							<label for="showcase-name" class="mb-2 block">Name*</label>
+							<input type="text" id="showcase-name" name="name" placeholder="Name" class="w-full rounded-[14px] border border-black px-4 py-[18px] text-black outline-none sm:px-[30px]" />
+						</div>
+						<div class="mb-4">
+							<label for="showcase-email" class="mb-2 block">Email*</label>
+							<input type="email" id="showcase-email" name="email" placeholder="Email" class="w-full rounded-[14px] border border-black px-4 py-[18px] text-black outline-none sm:px-[30px]" />
+						</div>
+						<div class="mb-4">
+							<label for="showcase-message" class="mb-2 block">Message*</label>
+							<textarea id="showcase-message" name="message" placeholder="Message" class="w-full rounded-[14px] border border-black px-4 py-[18px] text-black outline-none sm:px-[30px]"></textarea>
+						</div>
+						<button type="submit" class="pv-btn-primary w-full">Send</button>
+					</form>
+					<picture class="absolute bottom-[2%] right-[-25%] top-[2%] hidden lg:block">
+						<Image src={contactPic} alt="decor" />
+					</picture>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+<style>
+	@font-face {
+		font-family: "Grotesk";
+		src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff") format("woff");
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: "Grotesk";
+		src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff") format("woff");
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	.showcase-positivus {
+		--pv-green: #cf90f8;
+		--pv-dark: #1f1f24;
+		--pv-gray: #f3f3f3;
+		background: #fff;
+		color: #000;
+		font-family: "Grotesk", sans-serif;
+		font-size: 20px;
+		border-radius: max(0px, calc(var(--radius-large) - 0.25rem));
+		overflow: hidden;
+		padding-top: 2rem;
+	}
+
+	.pv-greenhead,
+	.pv-whitehead {
+		border-radius: 7px;
+		color: #000;
+		padding-inline: 7px;
+	}
+
+	.pv-greenhead {
+		background: var(--pv-green);
+	}
+
+	.pv-whitehead {
+		background: #fff;
+	}
+
+	.pv-btn-primary {
+		border-radius: 0.5rem;
+		background: var(--pv-dark);
+		color: #fff;
+		padding: 1.25rem 35px;
+		transition: all 200ms;
+	}
+
+	.pv-btn-primary:hover {
+		background: var(--pv-green);
+		color: #000;
+		transform: scale(1.05);
+	}
+
+	.pv-service-grid {
+		grid-template: auto auto;
+	}
+
+	.pv-accordion-icon::before,
+	.pv-accordion-icon::after {
+		position: absolute;
+		background: #000;
+		content: "";
+		transition: opacity 300ms ease;
+	}
+
+	.pv-accordion-icon::before {
+		left: 0;
+		top: calc(50% - 3px);
+		height: 6px;
+		width: 100%;
+	}
+
+	.pv-accordion-icon::after {
+		left: calc(50% - 3px);
+		top: 0;
+		height: 100%;
+		width: 6px;
+	}
+
+	.pv-accordion-item.active {
+		background: var(--pv-green);
+	}
+
+	.pv-accordion-item.active .pv-accordion-icon {
+		transform: rotate(180deg);
+	}
+
+	.pv-accordion-item.active .pv-accordion-icon::after {
+		opacity: 0;
+	}
+
+	.pv-slider-track {
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: none;
+	}
+
+	.pv-slider-track::-webkit-scrollbar {
+		display: none;
+	}
+
+	.pv-slide {
+		width: calc(50% - 25px);
+	}
+
+	.pv-bubble {
+		position: relative;
+		border: 1px solid var(--pv-green);
+		border-radius: 45px;
+		background: var(--pv-dark);
+		color: var(--pv-gray);
+		padding: 8%;
+	}
+
+	.pv-bubble::after {
+		position: absolute;
+		bottom: -20px;
+		left: 50px;
+		border-width: 22px;
+		border-style: solid;
+		border-color: var(--pv-dark) transparent transparent var(--pv-dark);
+		content: "";
+	}
+
+	.pv-bubble::before {
+		position: absolute;
+		bottom: -40px;
+		left: 48px;
+		border-width: 20px;
+		border-style: solid;
+		border-color: var(--pv-green) transparent transparent var(--pv-green);
+		content: "";
+	}
+
+	.pv-form-checkbox {
+		position: relative;
+		height: 28px;
+		width: 28px;
+		cursor: pointer;
+		appearance: none;
+		border: 1px solid #000;
+		border-radius: 50%;
+	}
+
+	.pv-form-checkbox::before {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		background: var(--pv-green);
+		content: "";
+		transform: scale(0);
+		transition: transform 100ms ease-in-out;
+	}
+
+	.pv-form-checkbox:checked::before {
+		transform: scale(0.6);
+	}
+
+	@media (max-width: 1023px) {
+		.pv-slide {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.showcase-positivus {
+			font-size: 16px;
+		}
+
+		.pv-accordion-toggle {
+			padding: 1.5rem;
+		}
+
+		.pv-accordion-item.active {
+			height: auto !important;
+		}
+	}
+</style>
+
+<script>
+	function closeAccordion(item: HTMLElement) {
+		item.classList.remove("active");
+		item.style.height = "160px";
+		item.querySelector(".pv-accordion-toggle")?.setAttribute("aria-expanded", "false");
+	}
+
+	function updateSliderPagination(track: HTMLElement) {
+		const slides = Array.from(track.querySelectorAll<HTMLElement>(".pv-slide"));
+		if (!slides.length) return;
+		const index = slides.reduce((closest, slide, current) => (
+			Math.abs(slide.offsetLeft - track.scrollLeft) < Math.abs(slides[closest].offsetLeft - track.scrollLeft)
+				? current
+				: closest
+		), 0);
+		track.closest("#ProjectSlider")?.querySelectorAll<HTMLElement>("[data-slider-index]").forEach((bullet, current) => {
+			bullet.classList.toggle("bg-[var(--pv-green)]", current === index);
+			bullet.classList.toggle("bg-white", current !== index);
+		});
+	}
+
+	if (!document.documentElement.dataset.showcaseControlsInitialized) {
+		document.documentElement.dataset.showcaseControlsInitialized = "true";
+
+		document.addEventListener("click", (event) => {
+			const target = event.target as Element;
+			const toggle = target.closest(".pv-accordion-toggle");
+			if (toggle) {
+				const item = toggle.closest(".pv-accordion-item") as HTMLElement | null;
+				if (!item) return;
+			document.querySelectorAll<HTMLElement>(".pv-accordion-item.active").forEach((other) => {
+					if (other !== item) closeAccordion(other);
+				});
+				if (item.classList.contains("active")) {
+					closeAccordion(item);
+				} else {
+					item.classList.add("active");
+					toggle.setAttribute("aria-expanded", "true");
+					item.style.height = `${item.scrollHeight}px`;
+				}
+				return;
+			}
+
+			const sliderBullet = target.closest("[data-slider-index]") as HTMLButtonElement | null;
+			if (sliderBullet) {
+				const slider = sliderBullet.closest("#ProjectSlider");
+				const track = slider?.querySelector<HTMLElement>("[data-slider-track]");
+				const slide = track?.querySelectorAll<HTMLElement>(".pv-slide")[Number(sliderBullet.dataset.sliderIndex)];
+				slide?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+				return;
+			}
+
+			const sliderButton = target.closest("[data-slider-direction]") as HTMLButtonElement | null;
+			if (sliderButton) {
+				const track = sliderButton.closest("#ProjectSlider")?.querySelector<HTMLElement>("[data-slider-track]");
+				const direction = Number(sliderButton.dataset.sliderDirection);
+				track?.scrollBy({ left: track.clientWidth * direction, behavior: "smooth" });
+			}
+		});
+
+		document.addEventListener("scroll", (event) => {
+			const track = event.target as HTMLElement;
+			if (track.matches?.("[data-slider-track]")) updateSliderPagination(track);
+		}, true);
+
+		document.addEventListener("change", (event) => {
+			const input = event.target as HTMLInputElement;
+			if (!input.matches("#showcase-checkbox1, #showcase-checkbox2")) return;
+			const greeting = document.querySelector<HTMLInputElement>("#showcase-checkbox1");
+			const quote = document.querySelector<HTMLInputElement>("#showcase-checkbox2");
+			const message = document.querySelector<HTMLTextAreaElement>("#showcase-message");
+			if (!greeting || !quote || !message) return;
+			if (input === quote && quote.checked) {
+				greeting.checked = false;
+				message.value = "We're interested in your services! Please contact us";
+			} else if (input === greeting && greeting.checked) {
+				quote.checked = false;
+				message.value = "";
+			} else {
+				greeting.checked = input === quote;
+				quote.checked = input === greeting;
+			}
+		});
+	}
+</script>

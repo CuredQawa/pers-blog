@@ -80,7 +80,11 @@ const mainPanelTop = siteConfig.banner.enable
             </a>}
 
 
-            <SideBar class="mb-4 row-start-2 row-end-3 col-span-2 lg:row-start-1 lg:row-end-2 lg:col-span-1 lg:max-w-[17.5rem] onload-animation" headings={headings}></SideBar>
+			<aside id="sidebar-shell" class="col-span-2 row-start-2 row-end-3 lg:col-span-1 lg:row-start-1 lg:row-end-2 lg:max-w-[17.5rem]">
+				<div id="sidebar-collapse">
+					<SideBar class="mb-4 onload-animation" headings={headings}></SideBar>
+				</div>
+			</aside>
 
             <main id="swup-container" class="transition-swup-fade col-span-2 lg:col-span-1 overflow-hidden">
                 <div id="content-wrapper" class="onload-animation">

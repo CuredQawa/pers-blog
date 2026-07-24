@@ -41,6 +41,10 @@ export const siteConfig: SiteConfig = {
 
 export const navBarConfig: NavBarConfig = {
 	links: [
+		{
+			name: "个人展示",
+			url: "/showcase/",
+		},
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
